@@ -38,11 +38,11 @@
                     <label for="nameTag">Name:</label>
                     <input type="text" id="nameTag" name="nameTag" value="e.g. Bundestag" maxlength="10" required
                         oninvalid="this.setCustomValidity('Name must be between 1 and 10 characters!')"
-                        oninput="this.setCustomValidity('')">
+                        oninput="this.setCustomValidity('')" onfocus="this.value=''">
                     <label for="hashtagTag">Hashtag:</label>
                     <input type="text" id"hashtagTag" name="hashtagTag" value="e.g. #BER" pattern="#.+" maxlength="11"
                         oninvalid="this.setCustomValidity('Hashtag must begin with #, followed by 1 to 10 characters!')"
-                        oninput="this.setCustomValidity('')">
+                        oninput="this.setCustomValidity('')" onfocus="this.value=''">
                     <input type="submit" value="Add Tag">
                 </fieldset>
 
@@ -61,7 +61,7 @@
                 <fieldset>
                     <legend>Search</legend>
                     <label for="termDiscovery">Search-term or keywords:</label>
-                    <input type="text" id="termDiscovery" name="termDiscovery" value="e.g. Berlin">
+                    <input type="text" id="termDiscovery" name="termDiscovery" value="e.g. Berlin" onfocus="this.value=''">
                     <input type="hidden" id="latitudeDiscovery" name="latitudeDiscovery">
                     <input type="hidden" id="longitudeDiscovery" name="longitudeDiscovery">
                     <input type="submit" value="Search">
