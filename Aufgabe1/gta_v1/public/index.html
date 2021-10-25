@@ -31,14 +31,14 @@
                 <!-- ... your code here ... -->
                 <fieldset>
                     <legend>Add a new GeoTag</legend>
-                    <label for="latitudeTag">Latitude:</label><br>
-                    <input type="text" id="latitudeTag" name="latitudeTag" value="49.01379" readonly><br>
-                    <label for="longitudeTag">Longitude:</label><br>
-                    <input type="text" id="longitudeTag" name="longitudeTag" value="8.390071" readonly><br>
-                    <label for="nameTag">Name:</label><br>
-                    <input type="text" id="nameTag" name="nameTag" value="e.g. Central Berlin" maxlength="10" required><br>
-                    <label for="hashtagTag">Hashtag:</label><br>
-                    <input type="text" id"hashtagTag" name="hashtagTag" value="e.g. #ber" pattern="#.{1,10}"><br>
+                    <label for="latitudeTag">Latitude:</label>
+                    <input type="text" id="latitudeTag" name="latitudeTag" value="49.01379" readonly disabled>
+                    <label for="longitudeTag">Longitude:</label>
+                    <input type="text" id="longitudeTag" name="longitudeTag" value="8.390071" readonly disabled>
+                    <label for="nameTag">Name:</label>
+                    <input type="text" id="nameTag" name="nameTag" value="e.g. Central Berlin" maxlength="10" required>
+                    <label for="hashtagTag">Hashtag:</label>
+                    <input type="text" id"hashtagTag" name="hashtagTag" value="e.g. #ber" pattern="#.{1,10}">
                     <input type="submit" value="Add Tag">
                 </fieldset>
 
@@ -56,8 +56,10 @@
                 <!-- ... your code here ... -->
                 <fieldset>
                     <legend>Search</legend>
-                    <label for="termDiscovery">Search-term or keywords:</label><br>
-                    <input type="text" id="termDiscovery" name="termDiscovery" value="e.g. Berlin"><br>
+                    <label for="termDiscovery">Search-term or keywords:</label>
+                    <input type="text" id="termDiscovery" name="termDiscovery" value="e.g. Berlin">
+                    <input type="hidden" id="latitudeDiscovery" name="latitudeDiscovery">
+                    <input type="hidden" id="longitudeDiscovery" name="longitudeDiscovery">
                     <input type="submit" value="Search">
                 </fieldset>
 
