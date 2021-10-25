@@ -49,6 +49,7 @@ a {
 fieldset {
   margin: 5px;
   margin-top: 15px;
+  margin-bottom: 15px;
   padding: 10px;
 }
 
@@ -187,15 +188,25 @@ input {
   list-style: none;
   color: var(--link-color);
   background-color: var(--background-color);
+  font-size: 30px;
   border: 1px dashed var(--gray-color);
   margin: 10px;
-  padding: 5px;
+  padding: 15px;
 }
 
 .discovery__map {
   display: flex;
   flex-direction: column;
   margin: 10px;
+}
+
+.discovery__map img {
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.discovery__map span {
+  font-weight: bold;
 }
 
 
@@ -213,7 +224,7 @@ input {
 /* ### TODO ### Media Queries */
 
 /* ... your code here ... */
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1250px) {
   
   .discovery__wrapper {
     flex-direction: column;
@@ -223,17 +234,17 @@ input {
     width: 95%;
   }
 
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6
+  .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+    width: 100%;
+  }
+
 }
 
 @media only screen and (max-width: 850px) {
 
   .row {
     flex-direction: column;
-  }
-
-  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6
-  .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
-    width: 100%;
   }
 
 }
