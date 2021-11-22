@@ -111,9 +111,11 @@ class MapManager {
         document.getElementById("longitudeTag").value = helper.longitude;
         document.getElementById("latitudeDiscovery").value = helper.latitude;
         document.getElementById("longitudeDiscovery").value = helper.longitude;
+        console.log("Set new coordinates! Current latitude:", helper.latitude, "Current longitude:", helper.longitude);
 
         // change URL for image element to one fitting the current location via MapQuest
         document.getElementById("mapView").src = new MapManager("hWa4XXaxnRItTYFMPqxKcflhfkGl8uHp").getMapUrl(helper.latitude, helper.longitude);
+        console.log("Successfully changed discovery map to one fitting the current location!");
     });
 }
 
