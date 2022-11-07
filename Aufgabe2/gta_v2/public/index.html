@@ -32,17 +32,13 @@
                 <fieldset>
                     <legend>Add a new GeoTag</legend>
                     <label for="latitudeTag">Latitude:</label>
-                    <input type="text" id="latitudeTag" name="latitudeTag" value="49.01379" readonly disabled>
+                    <input type="text" id="latitudeTag" name="latitudeTag" value="49.01379" readonly>
                     <label for="longitudeTag">Longitude:</label>
-                    <input type="text" id="longitudeTag" name="longitudeTag" value="8.390071" readonly disabled>
+                    <input type="text" id="longitudeTag" name="longitudeTag" value="8.390071" readonly>
                     <label for="nameTag">Name:</label>
-                    <input type="text" id="nameTag" name="nameTag" value="e.g. Bundestag" pattern="^[a-zA-Z]+$" maxlength="10" required
-                        oninvalid="this.setCustomValidity('Name must be between 1 and 10 characters!')"
-                        oninput="this.setCustomValidity('')" onfocus="this.value=''">
+                    <input type="text" id="nameTag" name="nameTag" value="e.g. Bundestag" pattern="^[a-zA-Z]+$" maxlength="10" required>
                     <label for="hashtagTag">Hashtag:</label>
-                    <input type="text" id"hashtagTag" name="hashtagTag" value="e.g. #BER" pattern="^#[a-zA-Z]+$" maxlength="11"
-                        oninvalid="this.setCustomValidity('Hashtag must begin with #, followed by 1 to 10 characters!')"
-                        oninput="this.setCustomValidity('')" onfocus="this.value=''">
+                    <input type="text" id"hashtagTag" name="hashtagTag" value="e.g. #BER" pattern="^#[a-zA-Z]+$" maxlength="11">
                     <input type="submit" value="Add Tag">
                 </fieldset>
 
@@ -78,7 +74,7 @@
                     </ul>
                 </div>
 
-                <div class="discovery__map col-8">
+                <div class="discovery__map col-9">
                     <img src="./images/mapview.jpg" alt="a map with locations" id="mapView" />
                     <span>Result map</span>
                 </div>

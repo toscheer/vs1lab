@@ -47,7 +47,6 @@ a {
 
 /* ... your code here ... */
 fieldset {
-  margin: 5px;
   margin-top: 15px;
   margin-bottom: 15px;
   padding: 10px;
@@ -176,7 +175,7 @@ input {
 }
 
 .discovery__search input {
-  width: 40%;
+  width: 95%;
 }
 
 .discovery__wrapper {
@@ -188,21 +187,19 @@ input {
   list-style: none;
   color: var(--link-color);
   background-color: var(--background-color);
-  font-size: 30px;
   border: 1px dashed var(--gray-color);
-  margin: 10px;
   padding: 15px;
+  margin-bottom: 10px;
 }
 
 .discovery__map {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  margin-left: 15px;
 }
 
 .discovery__map img {
-  align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .discovery__map span {
@@ -220,27 +217,15 @@ input {
   padding: 20px;
 }
 
+@media only screen and (max-width: 1050px) {
 
-/* ### TODO ### Media Queries */
-
-/* ... your code here ... */
-@media only screen and (max-width: 1250px) {
-  
   .discovery__wrapper {
     flex-direction: column;
   }
 
-  .discovery__search input {
-    width: 95%;
+  .discovery__map {
+    margin-left: 0px;
   }
-
-  .col-4, .col-8 {
-    width: 100%;
-  }
-
-}
-
-@media only screen and (max-width: 850px) {
 
   .row {
     flex-direction: column;
