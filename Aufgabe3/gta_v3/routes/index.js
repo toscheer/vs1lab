@@ -96,8 +96,8 @@ router.post('/discovery', (req, res) => {
     var matchingAndNearbyTags = geoTagStore.searchNearbyGeoTags(currentLocation, req.body["termDiscovery"]);
     res.render('index', { 
       taglist: matchingAndNearbyTags, 
-      ejsLat: req.body["latitudeTag"], 
-      ejsLon: req.body["longitudeTag"],
+      ejsLat: req.body["latitudeDiscovery"], 
+      ejsLon: req.body["longitudeDiscovery"],
       ejsMap: JSON.stringify(matchingAndNearbyTags) 
     });
 });
