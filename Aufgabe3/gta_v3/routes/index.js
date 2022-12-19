@@ -70,7 +70,7 @@ router.post('/tagging', (req, res) => {
       taglist: nearbyTags, 
       ejsLat: req.body["latitudeTag"], 
       ejsLon: req.body["longitudeTag"], 
-      ejsMap: [] 
+      ejsMap: JSON.stringify(nearbyTags)
     })
 });
 
