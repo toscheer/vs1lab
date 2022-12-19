@@ -11,7 +11,58 @@
  */
 class GeoTag {
 
-    // TODO: ... your code here ...
+    #name = '';
+    #latitude = 0.0;
+    #longitude = 0.0;
+    #hashtag = '';
+
+    constructor(name, latitude, longitude, hashtag) {
+        this.#name = name;
+        this.#latitude = latitude;
+        this.#longitude = longitude;
+        this.#hashtag = hashtag;
+    }
+
+    get name() {
+        return this.#name;
+    }
+
+    set name(name) {
+        this.#name = name;
+    }
+
+    get latitude() {
+        return this.#latitude;
+    }
+
+    set latitude(latitude) {
+        this.#latitude = latitude;
+    }
+
+    get longitude() {
+        return this.#longitude;
+    }
+
+    set longitude(longitude) {
+        this.#longitude = longitude;
+    }
+
+    get hashtag() {
+        return this.#hashtag;
+    }
+
+    set hashtag(hashtag) {
+        this.#hashtag = hashtag;
+    }
+
+    toJSON() {
+        return {
+            name: this.#name,
+            latitude: this.#latitude,
+            longitude: this.#longitude,
+            hashtag: this.#hashtag
+        }
+    }
     
 }
 

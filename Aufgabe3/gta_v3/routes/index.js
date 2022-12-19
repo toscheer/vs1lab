@@ -30,6 +30,7 @@ const GeoTag = require('../models/geotag');
  */
 // eslint-disable-next-line no-unused-vars
 const GeoTagStore = require('../models/geotag-store');
+const geoTagStore = new GeoTagStore();
 
 /**
  * Route '/' for HTTP 'GET' requests.
@@ -42,7 +43,7 @@ const GeoTagStore = require('../models/geotag-store');
 
 // TODO: extend the following route example if necessary
 router.get('/', (req, res) => {
-  res.render('index', { taglist: [] })
+  res.render('index', { taglist: [], ejsLat: "", ejsLon: "", ejsMap: [] })
 });
 
 /**
@@ -61,6 +62,17 @@ router.get('/', (req, res) => {
  */
 
 // TODO: ... your code here ...
+router.post('/tagging', (req, res) => {
+    var newTag = new GeoTag(req.body["nameTag"], req.body["latitudeTag"], req.body["longitudeTag"], req.body["hashtagTag"]);
+    geoTagStore.addGeoTag(newTag);
+    var nearbyTags = geoTagStore.getNearbyGeoTags(newTag);
+    res.render('index', { 
+      taglist: nearbyTags, 
+      ejsLat: req.body["latitudeTag"], 
+      ejsLon: req.body["longitudeTag"], 
+      ejsMap: [] 
+    })
+});
 
 /**
  * Route '/discovery' for HTTP 'POST' requests.
@@ -79,5 +91,15 @@ router.get('/', (req, res) => {
  */
 
 // TODO: ... your code here ...
+router.post('/discovery', (req, res) => {
+    var currentLocation = new GeoTag(req.body["termDiscovery"], req.body["latitudeDiscovery"], req.body["longitudeDiscovery"], req.body["termDiscovery"]);
+    var matchingAndNearbyTags = geoTagStore.searchNearbyGeoTags(currentLocation, req.body["termDiscovery"]);
+    res.render('index', { 
+      taglist: matchingAndNearbyTags, 
+      ejsLat: req.body["latitudeTag"], 
+      ejsLon: req.body["longitudeTag"],
+      ejsMap: JSON.stringify(matchingAndNearbyTags) 
+    });
+});
 
 module.exports = router;
