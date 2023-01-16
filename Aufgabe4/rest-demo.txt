@@ -1,0 +1,27 @@
+### POST (Create Tag)
+
+curl -d "{\"name\":\"Bunker\",\"latitude\":49.014993,\"longitude\":8.390049,\"hashtag\":\"#campus\"}" -H "Content-Type: application/json" http://localhost:3000/api/geotags
+
+
+
+### GET (Read Tag)
+
+curl http://localhost:3000/api/geotags/11
+
+
+
+### PUT (Modify Tag)
+
+curl -d "{\"name\":\"Tiefbunker\",\"latitude\":49.014993,\"longitude\":8.390049,\"hashtag\":\"#campus\"}" -H "Content-Type: application/json" -X PUT http://localhost:3000/api/geotags/11
+
+
+
+### DELETE (Delete Tag)
+
+curl -X DELETE http://localhost:3000/api/geotags/11
+
+
+
+### GET (Search by proximity)
+
+curl -v "http://localhost:3000/api/geotags/49.014993&8.390049&campus"
